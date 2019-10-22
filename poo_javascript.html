@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>POO en JavaScript</title>
+</head>
+<body>
+<h1>POO en JavaScript</h1>
+
+<script src="producto.class.js"></script>
+<script>
+    let unProducto = new Producto("Café Torrado", 340, 94.99, true); //instanciamos el objeto tal cual nombramos a la clase. Un objeto es la instancia es memoria de una clase.
+
+    let otroProducto = new Producto("Jugo de Naranja", 344, 55.98, false);
+    let tercerProducto = new Producto("Té de Manzanilla", 234, 89.32)
+
+
+    //Cuando uno trabaja con objetos esta almacenando un tipoDeDato en la variable. Los objetos son tipos de dato.
+    //unProdcuto instanceof Producto -- instanceof devuelve true o false si el objeto es una instancia de la clase. Podemos validar una variable no solo por el dato sino por la naturaleza en sí del objeto
+
+    otroProducto.aplicarDescuento(15)
+
+    unProducto.Mostrar(); // Invoco al método mostrar a traves de la instancia del objeto Producto
+    otroProducto.Mostrar();
+    tercerProducto.Mostrar();
+
+    console.log(unProducto);
+    console.log(otroProducto);
+    console.log(tercerProducto);
+
+    ////////////////////////////////
+    
+    const miniFirefox = new XMLHttpRequest();
+    miniFirefox.open("GET", "https://api.myjson.com/bins/1giaf3"); // <-- Método de Instancia del objeto XMLHttpRequest
+    //Evento onload/onerror (instrucción que se ejecuta cuando se haya descargado la info solicitada)
+    miniFirefox.onload = function() {  //Petición exitosa
+
+        //console.log(this)
+
+        if (this.status == 200) { //Respuesta exitosa (acá el this es miniFirefox)
+            
+            //let productos = JSON.parse(this.response)
+
+            let productos = Producto.parse(this.response) // <--- de JSON a Producto (uso mi propio método parse) // esto es un ORM (Object Relational Mapping -->obtengo datos y los transformo en objetos) // parse es un método de clase puedo acceder sin instanciar. // también se los llama métodos estáticos
+            
+            //Recorro el array de objetos
+            productos.forEach(producto => {
+                producto.Mostrar();
+            })
+        }
+    }
+    miniFirefox.onerror = function () {
+        
+    } 
+    
+    miniFirefox.send() //>>Da la orden de ejecutar la petición  - es un método de instancia
+
+
+    
+    
+
+</script>
+</body>
+</html>

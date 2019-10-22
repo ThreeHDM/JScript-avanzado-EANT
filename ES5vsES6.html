@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES5 Vs ES6</title>
+</head>
+<body>
+    <h1>ECMAScript 5 vs ECMAScript 6</h1>
+    <script>
+        /*1) VARIABLES*/
+
+        //ES5 - creación de variables
+        //var dato = "Hola mundo desde una variable";
+
+        /*
+            Esto era Sugar Sintax - esto no era crear una variable sino extender al objeto padre que es Window. Window es el componente de mayor jerarquía que tiene todo el lenguaje. En él está la información de todo el navegador. Adentro de W, está document Ej: window.document.querySelector("h1"). Todo lo que se hacía era trabajar sobre el objeto principal window y cada vez que hacíamos un "var x = 1" era hacer window.x - JS no reservaba en memoria. Creaba una nueva pieza al objeto window y creaba propiedades nuevas al objeto Window. Crear muchas variables era una mala práctica ya que Window cuenta con muchas propiedades en su origen. Se sobrecarga el motor de renderizado.
+
+            La nueva sintaxis vienen a superar éste problema. Con la palabra reservada let no sobrecarga al navegador y guarda el valor en memoria como una verdadera variable
+
+            Se desaconseja usar la palabra var salvo que sean datos globales. Un dato que esté vivo todo el tiempo
+        */
+
+        //ES6
+        //En ES6 las variables se declaran con la palabra reservada let 
+        let dato = "Hola mundo desde una verdadera variable"
+
+        //Además ES6 agrega las constantes. Espacio reservado en memoria inmutable
+        const datoFijo = "Hola mundo desde una constante"
+
+        console.log(dato);
+
+
+        /*2) FUNCIONES (PARTE I) */
+
+        //JScript tiene dos tipos de funciones. 
+
+        //ES5
+        /*
+        function saludar(saludo) { // <-- Función Nominada. Tiene un nombre para implementarla
+            console.log(saludo);
+        }
+
+        function (){ <-- Función Innominada. No tiene nombre y la uso una única vez.
+
+        }
+        */
+
+        /*Todo esto también era una ficción. Las funciones nominadas se crean bajo el mismo concepto que var. Su verdadera sintaxis es la siguiente
+        
+        window.saludar = function (saludo) {
+            console.log(saludo)
+        }
+
+        Todas las funciones en JS son anónimas 
+        
+        */
+
+        //ES6
+        //las funciones no se alteran por lo que las ubicamos en constantes
+        const saludar = function(saludo){
+            console.log(saludo);
+        }
+
+        /*3) FUNCIONES (PARTE II)*/
+
+        /*
+        var despedirse = function(adios) {
+            console.log(adios)
+        }
+        */
+
+        //La gran innovación en funciones de ES6 es que nace una nueva variante. NO ES UN REEMPLAZO. Una redefinición de roles. En ES6 la palabra function se reserva a la sintaxis de la programación orientada a objetos. Para todo lo demás, que trabaje con datos se recomienda trabajar así:
+    
+        const despedirse = (adios) => { //<-- ARROW FUNCTION (ES6) - prescinde de la palabra function
+            window.document.write(adios)
+        }
+
+        //Son muy útiles para procesos iterativos y tiene múltiples variantes y formas de trabajarla. Luego las veremos
+
+        
+
+        
+
+    
+    </script>
+</body>
+</html>

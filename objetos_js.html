@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Objetos en JavaScript</title>
+</head>
+<body>
+    <h1>Objetos en JavaScript</h1>
+    <script>
+        const crearProducto = function(n,s,p,d){ // es lo mismo que hacer function crearProducto(){...}
+                //esta función funciona como un __constructor - antes de ES6 se hacía así
+                let elProducto = new Object()
+
+
+                //Propiedades
+                elProducto.nombre = n
+                elProducto.stock = s
+                elProducto.precio = p
+                elProducto.disponible = d
+
+                //Métodos
+                elProducto.Mostrar = function(){ // <-- Closure (función dentro de otra función)
+                    window.document.write(`Existen <strong>${elProducto.stock} </strong> unidades de ${elProducto.nombre} que valen $ ${elProducto.precio} <br>`)
+                }
+
+
+                return elProducto
+        }
+
+        ////////////////////////////////////////////////////////////////////
+        /*
+            El concepto de Objetos en JS tiene una connotación diferente a otros lenguajes. Esto fue bastante criticado en el pasado.
+
+            Al nombrar variables usamos un nombre lógico para nombrarla. Explícita de lo que quiero que represente cada dato
+        */
+
+        //Datos en variables sueltas
+        let nombre = "Café"
+        let stock = 500
+        let precio = 68.55
+        let disponible = true
+
+        //Todos estos datos definen a un PRODUCTO. El objeto es la denominación ficticia de una agrupación de datos. Esto representa a un producto. El problema es que para trabajar con otro producto de este modo debería nombrar más variables por cada producto.
+
+        //Datos en una coleccion del tipo Array
+        //Para evitar declarar más variables podría crear un array pero el problema de tener muchos datos, persiste. Uno de los problemas es el sistema de posiciones del 0 al 4
+        let producto = ["Jugo", 520, 15.65, false]
+
+        //Si quiero lo mejor de ambos (nombre de cada dato + todo en una misma variable), uso un OBJETO.
+
+        //datos en un objeto (literal)
+        let otroProducto = {
+            nombre : "Agua finamente gasificada",
+            stock : 750,
+            precio : 85.45,
+            disponible : true
+        }
+
+
+        //Javascript tiene varias formas de crear un objeto. La otra es:
+
+        //Datos en un objeto (diferido)
+        //el objeto se crea vacío y luego en operaciones posteriores se le van asignando porpiedades y métodos. Se construye con la lógica del programa.
+
+        let tercerProducto = new Object();
+        tercerProducto.nombre = "Te de Hierbas Orientales"
+        tercerProducto.stock = 45
+        tercerProducto.precio = 136.33
+        tercerProducto.disponible = false
+
+        //imprimir producto
+        //ES5
+        //window.document.write("Hay " + tercerProducto.stock + " unidades de " + tercerProducto.nombre + " que valen $" + tercerProducto.precio);
+
+        //ES6 - nueva sintaxis
+        //window.document.write(`Existen ${tercerProducto.stock} unidades de ${tercerProducto.nombre} que valen $ ${tercerProducto.precio}`) //<-- template string
+
+        
+        let cuartoProducto = crearProducto("Malbec", 450, 159.56, true)
+        let ultimoProducto = crearProducto("Queso", 800, 59.56, false)
+        
+        //Accedo al método
+        cuartoProducto.Mostrar()
+        ultimoProducto.Mostrar()
+
+        // window.document.write(`Existen ${cuartoProducto.stock} unidades de ${cuartoProducto.nombre} que valen $ ${cuartoProducto.precio}`)
+
+        //Un objeto se define por dos cosas. Lo que es y lo que hace. Lo primero son sus propiedades, y lo que hace son sus métodos. ¿Qué puedo hacer con un producto? Comprarlo, aumentar stock, etc. (Verbos/acciones)
+        
+    </script>
+</body>
+</html>
