@@ -77,12 +77,54 @@
 
 			//Remueve del localStorage
 			//window.localStorage.removeItem("USUARIOS")
-
+			
 			//Vacía todo y libera el almacenamiento
 			//window.localStorage.clear()
 
+			//Prometo que cuando tenga datos los voy a convertir y los voy a mostrar
+					//leer APIS html libro - sobre localstorage y sobre sessionStorage
+
+					/*
+						Las promesas en JS son un tipo de objeto en particular
+						Representan un valor que puede llegar a estar disponible. 
+					*/
+
+					//el callback del objeto promise tiene dos parámetros que se encargan de activar al then o al catch. El nombre técnico es resolve y reject. Aca lo cambiamos a ok y error
+			const promesa = new Promise(function(ok, error){
+					//si llamo a ok se activa then() y con error se activa catch()	
+					//vamos a setear un tiempo para que se ejecute una funcion
+						window.setTimeout(function(){
+
+							let numero = Math.random() 
+							if ( numero < 0.5) {
+								ok(numero + "Vale menos que 0,5") //se ejecuta en then()
+							} else {
+								error(numero + "Vale más que 0,5") //se ejecuta en catch()
+							}
+						}, 1000) //luego de X segundos
+					})
+
+					//la funcion then() tendrá programadas las instrucciones que hagan uso de esos datos que surjan del objeto promesa. 
+					promesa.then(function(rta){
+						//puedo tomar como parametro lo que pasé por el ok() 
+						alert(rta)
+					}) //<-- ocurre cuando "sale bien"
+
+					//la funcion catch()
+					promesa.catch(function(rta){
+						alert(rta)
+					}) //<-- ocurre cuando "sale mal"
+
+					//finally es la última instruccion de la cadena. El que queremos que ocurra sí o sí sin importar el resultado de la secuencia de instrucciones
+					promesa.finally(function(){
+						confirm("se entendió?")
+					})
+					
 
 			//////////////////////////////////////////////////////////////
+			if (!window.localStorage.getItem("PRODUCTOS")) {
+			//Si no existen los datos en localStorage entra acá	
+			
 			const miniFirefox = new XMLHttpRequest();
 			miniFirefox.open("GET", "https://api.myjson.com/bins/dcg2p");
 			miniFirefox.onload = function() {  
@@ -90,16 +132,15 @@
 					//Guardar los datos de la petición. Siempre guardo un string, en este caso la respuesta JSON
 					window.localStorage.setItem("PRODUCTOS", this.response)
 
-					//Prometo que cuando tenga datos los voy a convertir y los voy a mostrar
-					//leer APIS html libro - sobre localstorage y sobre sessionStorage
+					
+
+					
 
 					json = window.localStorage.getItem("PRODUCTOS")
 
 					p = JSON.parse(json)
 
-					console.dir(p)
-
-					
+					console.dir(p)	
 
 					let productos = Producto.parse(this.response) 
 					productos.forEach(producto => {
@@ -110,7 +151,18 @@
 			
 
 			miniFirefox.send() //>>Da la orden de ejecutar la petición  - es un método de instancia
+		} else {
+			//Existe LS y podemos usarlo para crear los objetos producto
+			alert('hay LocalStorage')
 
+			let productos = Producto.parse( window.localStorage.getItem("PRODUCTOS"))
+
+			productos.forEach(producto => {
+						producto.Mostrar();
+					})
+		}	
+
+		
 		</script>
 	</body>
 </html>
