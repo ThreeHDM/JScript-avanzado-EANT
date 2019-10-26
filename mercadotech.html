@@ -90,11 +90,12 @@
 					*/
 
 					//el callback del objeto promise tiene dos parámetros que se encargan de activar al then o al catch. El nombre técnico es resolve y reject. Aca lo cambiamos a ok y error
-			const promesa = new Promise(function(ok, error){
+		const promesa = new Promise(function(ok, error){
 					//si llamo a ok se activa then() y con error se activa catch()	
 					//vamos a setear un tiempo para que se ejecute una funcion
-						window.setTimeout(function(){
+												/*
 
+						window.setTimeout(function(){
 							let numero = Math.random() 
 							if ( numero < 0.5) {
 								ok(numero + "Vale menos que 0,5") //se ejecuta en then()
@@ -102,17 +103,78 @@
 								error(numero + "Vale más que 0,5") //se ejecuta en catch()
 							}
 						}, 1000) //luego de X segundos
+						*/
+				if (!window.localStorage.getItem("PRODUCTOS")) {
+						//Si no existen los datos en localStorage entra acá	
+						
+						const miniFirefox = new XMLHttpRequest();
+						miniFirefox.open("GET", "https://api.myjson.com/bins/@@@@@1111224667r7456");
+						miniFirefox.onload = function() {  
+							if (this.status == 200) { 
+								//Guardar los datos de la petición. Siempre guardo un string, en este caso la respuesta JSON
+								window.localStorage.setItem("PRODUCTOS", this.response)
+
+								ok(this.response)
+
+								/*
+
+								json = window.localStorage.getItem("PRODUCTOS")
+
+								p = JSON.parse(json)
+
+								console.dir(p)	
+			*/
+								/*
+								let productos = Producto.parse(this.response) 
+								productos.forEach(producto => {
+									producto.Mostrar();
+								})
+								*/
+							} else {
+								this.onerror()
+							}
+						}
+						miniFirefox.onerror = function () {
+							error(this.statusText)
+						}
+
+						miniFirefox.send() //>>Da la orden de ejecutar la petición  - es un método de instancia
+		} else {
+			//Existe LS y podemos usarlo para crear los objetos producto
+			//alert('hay LocalStorage')
+			/*
+			let productos = Producto.parse( window.localStorage.getItem("PRODUCTOS"))
+
+			productos.forEach(producto => {
+						producto.Mostrar();
 					})
+			*/
+			ok(window.localStorage.getItem("PRODUCTOS"))				
+		}
+	})
 
 					//la funcion then() tendrá programadas las instrucciones que hagan uso de esos datos que surjan del objeto promesa. 
 					promesa.then(function(rta){
+						/*
 						//puedo tomar como parametro lo que pasé por el ok() 
 						alert(rta)
+						*/
+						let productos = Producto.parse(rta)
+
+						
+						
+						
+						productos.forEach(producto => {
+							producto.Mostrar()
+						});
+						
 					}) //<-- ocurre cuando "sale bien"
 
 					//la funcion catch()
 					promesa.catch(function(rta){
-						alert(rta)
+						//alert(rta)
+						document.querySelector("#productos-destacados").innerHTML = '<div class="alert alert-danger">'+rta+'</div>'
+						
 					}) //<-- ocurre cuando "sale mal"
 
 					//finally es la última instruccion de la cadena. El que queremos que ocurra sí o sí sin importar el resultado de la secuencia de instrucciones
@@ -122,45 +184,7 @@
 					
 
 			//////////////////////////////////////////////////////////////
-			if (!window.localStorage.getItem("PRODUCTOS")) {
-			//Si no existen los datos en localStorage entra acá	
-			
-			const miniFirefox = new XMLHttpRequest();
-			miniFirefox.open("GET", "https://api.myjson.com/bins/dcg2p");
-			miniFirefox.onload = function() {  
-				if (this.status == 200) { 
-					//Guardar los datos de la petición. Siempre guardo un string, en este caso la respuesta JSON
-					window.localStorage.setItem("PRODUCTOS", this.response)
-
-					
-
-					
-
-					json = window.localStorage.getItem("PRODUCTOS")
-
-					p = JSON.parse(json)
-
-					console.dir(p)	
-
-					let productos = Producto.parse(this.response) 
-					productos.forEach(producto => {
-						producto.Mostrar();
-					})
-				}
-			}
-			
-
-			miniFirefox.send() //>>Da la orden de ejecutar la petición  - es un método de instancia
-		} else {
-			//Existe LS y podemos usarlo para crear los objetos producto
-			alert('hay LocalStorage')
-
-			let productos = Producto.parse( window.localStorage.getItem("PRODUCTOS"))
-
-			productos.forEach(producto => {
-						producto.Mostrar();
-					})
-		}	
+				
 
 		
 		</script>
