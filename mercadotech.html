@@ -1,192 +1,195 @@
 <!DOCTYPE html>
 <html lang="es-AR">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-		<title>MercadoTECH - Tu e-shop.js</title>
-		<link rel="stylesheet" href="https://blackrockdigital.github.io/startbootstrap-shop-item/vendor/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://blackrockdigital.github.io/startbootstrap-shop-item/css/shop-item.css">
-	</head>
 
-	<body>
-		<header class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top">
-			<div class="container">
-				<a class="navbar-brand font-weight-bold" href="#">&#x1F5A5; MercadoTECH</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Menu">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<nav class="collapse navbar-collapse" id="menu">
-					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active">
-							<a class="nav-link" href="#">&#x1F512; Ingresar</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
-		</header>
-		<main class="container">
-			<h2 class="w-100 my-3 p-3 border">&#x2B50; Productos Destacados</h2>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+	<title>MercadoTECH - Tu e-shop.js</title>
+	<link rel="stylesheet"
+		href="https://blackrockdigital.github.io/startbootstrap-shop-item/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://blackrockdigital.github.io/startbootstrap-shop-item/css/shop-item.css">
+</head>
 
-			<!-- AREA PRODUCTOS DESTACADOS -->
-			<section id="productos-destacados" class="row">
-				<!-- Inicio Producto #1 -->
-				<article class="col-lg-4 col-md-6 mb-4 d-none producto">
-					<div class="card h-100">
-						<a href="#">
-							<img class="card-img-top" src="http://placehold.it/700x400" alt="">
-						</a>
-						<div class="card-body">
-							<h4 class="card-title">
-								<a href="#">Producto X</a>
-							</h4>
-							<h5>$999.99</h5>
-							<p class="card-text">No deje pasar esta oportunidad... COMPRE YA!</p>
-						</div>
+<body>
+	<header class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top">
+		<div class="container">
+			<a class="navbar-brand font-weight-bold" href="#">&#x1F5A5; MercadoTECH</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu"
+				aria-expanded="false" aria-label="Menu">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<nav class="collapse navbar-collapse" id="menu">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">&#x1F512; Ingresar</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<main class="container">
+		<h2 class="w-100 my-3 p-3 border">&#x2B50; Productos Destacados</h2>
+
+		<!-- AREA PRODUCTOS DESTACADOS -->
+		<section id="productos-destacados" class="row">
+			<!-- Inicio Producto #1 -->
+			<article class="col-lg-4 col-md-6 mb-4 d-none producto">
+				<div class="card h-100">
+					<a href="#">
+						<img class="card-img-top" src="http://placehold.it/700x400" alt="">
+					</a>
+					<div class="card-body">
+						<h4 class="card-title">
+							<a href="#">Producto X</a>
+						</h4>
+						<h5>$999.99</h5>
+						<p class="card-text">No deje pasar esta oportunidad... COMPRE YA!</p>
 					</div>
-				</article>
-				<!-- Fin de Producto #1 -->
+				</div>
+			</article>
+			<!-- Fin de Producto #1 -->
 
 
-				
 
-			</section>
-		</main>
-		<footer class="py-5 bg-dark">
-			<div class="container">
-				<p class="m-0 text-center text-white">¡La mejor manera de comprar online!</p>
-			</div>
-		</footer>
-		<script src="https://blackrockdigital.github.io/startbootstrap-shop-item/vendor/jquery/jquery.min.js"></script>
-		<script src="https://blackrockdigital.github.io/startbootstrap-shop-item/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-		<script src="producto.class.js"></script>
-		<script>
-			
-			/*Persistencia en JavaScript con la API Storage*/
+
+		</section>
+	</main>
+	<footer class="py-5 bg-dark">
+		<div class="container">
+			<p class="m-0 text-center text-white">¡La mejor manera de comprar online!</p>
+		</div>
+	</footer>
+	<script src="https://blackrockdigital.github.io/startbootstrap-shop-item/vendor/jquery/jquery.min.js"></script>
+	<script
+		src="https://blackrockdigital.github.io/startbootstrap-shop-item/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="producto.class.js"></script>
+	<script>
+
+		/*Persistencia en JavaScript con la API Storage*/
+		/*
+		LocalStorage y SessionStorage son componentes de window (el navegador)
+		window.localStorage && window.sessionStorage
+		Los comandos para interactuar con ellos son idénticos. Lo que cambia es que sessionStorage queda permanentemente en el navegador. En sessionStorage permanece en la sesión, al cerrar la página se destruyen los datos
+		*/
+
+		//Establece un nuevo almacenamiento en el navegador. Tiene dos argumentos. El primero es el nombre que identifica a este Storage. Se lo pone en MAYUS. En el segundo va el dato. El límite máximo son 5MB
+		//window.localStorage.setItem("PRODUCTOS", "Guardo los datos de productos")
+		//window.localStorage.setItem("USUARIOS", "Guardo los datos de usuario")
+
+		//traigo el item de PRODUCTOS y lo imprimo en localStorage
+		//console.log(window.localStorage.getItem("PRODUCTOS"))
+
+		//Remueve del localStorage
+		//window.localStorage.removeItem("USUARIOS")
+
+		//Vacía todo y libera el almacenamiento
+		//window.localStorage.clear()
+
+		//Prometo que cuando tenga datos los voy a convertir y los voy a mostrar
+		//leer APIS html libro - sobre localstorage y sobre sessionStorage
+
+		/*
+			Las promesas en JS son un tipo de objeto en particular
+			Representan un valor que puede llegar a estar disponible. 
+		*/
+
+		//el callback del objeto promise tiene dos parámetros que se encargan de activar al then o al catch. El nombre técnico es resolve y reject. Aca lo cambiamos a ok y error
+		const promesa = new Promise(function (ok, error) {
+			//si llamo a ok se activa then() y con error se activa catch()	
+			//vamos a setear un tiempo para que se ejecute una funcion
 			/*
-			LocalStorage y SessionStorage son componentes de window (el navegador)
-			window.localStorage && window.sessionStorage
-			Los comandos para interactuar con ellos son idénticos. Lo que cambia es que sessionStorage queda permanentemente en el navegador. En sessionStorage permanece en la sesión, al cerrar la página se destruyen los datos
-			*/
 
-			//Establece un nuevo almacenamiento en el navegador. Tiene dos argumentos. El primero es el nombre que identifica a este Storage. Se lo pone en MAYUS. En el segundo va el dato. El límite máximo son 5MB
-			//window.localStorage.setItem("PRODUCTOS", "Guardo los datos de productos")
-			//window.localStorage.setItem("USUARIOS", "Guardo los datos de usuario")
-			
-			//traigo el item de PRODUCTOS y lo imprimo en localStorage
-			//console.log(window.localStorage.getItem("PRODUCTOS"))
+window.setTimeout(function(){
+let numero = Math.random() 
+if ( numero < 0.5) {
+ok(numero + "Vale menos que 0,5") //se ejecuta en then()
+} else {
+error(numero + "Vale más que 0,5") //se ejecuta en catch()
+}
+}, 1000) //luego de X segundos
+*/
+			if (!window.localStorage.getItem("PRODUCTOS")) {
+				//Si no existen los datos en localStorage entra acá	
 
-			//Remueve del localStorage
-			//window.localStorage.removeItem("USUARIOS")
-			
-			//Vacía todo y libera el almacenamiento
-			//window.localStorage.clear()
+				const miniFirefox = new XMLHttpRequest();
+				miniFirefox.open("GET", "https://api.myjson.com/bins/@@@@@1111224667r7456");
+				miniFirefox.onload = function () {
+					if (this.status == 200) {
+						//Guardar los datos de la petición. Siempre guardo un string, en este caso la respuesta JSON
+						window.localStorage.setItem("PRODUCTOS", this.response)
 
-			//Prometo que cuando tenga datos los voy a convertir y los voy a mostrar
-					//leer APIS html libro - sobre localstorage y sobre sessionStorage
+						ok(this.response)
 
-					/*
-						Las promesas en JS son un tipo de objeto en particular
-						Representan un valor que puede llegar a estar disponible. 
-					*/
+						/*
 
-					//el callback del objeto promise tiene dos parámetros que se encargan de activar al then o al catch. El nombre técnico es resolve y reject. Aca lo cambiamos a ok y error
-		const promesa = new Promise(function(ok, error){
-					//si llamo a ok se activa then() y con error se activa catch()	
-					//vamos a setear un tiempo para que se ejecute una funcion
-												/*
+						json = window.localStorage.getItem("PRODUCTOS")
 
-						window.setTimeout(function(){
-							let numero = Math.random() 
-							if ( numero < 0.5) {
-								ok(numero + "Vale menos que 0,5") //se ejecuta en then()
-							} else {
-								error(numero + "Vale más que 0,5") //se ejecuta en catch()
-							}
-						}, 1000) //luego de X segundos
+						p = JSON.parse(json)
+
+						console.dir(p)	
+	*/
+						/*
+						let productos = Producto.parse(this.response) 
+						productos.forEach(producto => {
+							producto.Mostrar();
+						})
 						*/
-				if (!window.localStorage.getItem("PRODUCTOS")) {
-						//Si no existen los datos en localStorage entra acá	
-						
-						const miniFirefox = new XMLHttpRequest();
-						miniFirefox.open("GET", "https://api.myjson.com/bins/@@@@@1111224667r7456");
-						miniFirefox.onload = function() {  
-							if (this.status == 200) { 
-								//Guardar los datos de la petición. Siempre guardo un string, en este caso la respuesta JSON
-								window.localStorage.setItem("PRODUCTOS", this.response)
+					} else {
+						this.onerror()
+					}
+				}
+				miniFirefox.onerror = function () {
+					error(this.statusText)
+				}
 
-								ok(this.response)
+				miniFirefox.send() //>>Da la orden de ejecutar la petición  - es un método de instancia
+			} else {
+				//Existe LS y podemos usarlo para crear los objetos producto
+				//alert('hay LocalStorage')
+				/*
+				let productos = Producto.parse( window.localStorage.getItem("PRODUCTOS"))
+	
+				productos.forEach(producto => {
+							producto.Mostrar();
+						})
+				*/
+				ok(window.localStorage.getItem("PRODUCTOS"))
+			}
+		})
 
-								/*
-
-								json = window.localStorage.getItem("PRODUCTOS")
-
-								p = JSON.parse(json)
-
-								console.dir(p)	
-			*/
-								/*
-								let productos = Producto.parse(this.response) 
-								productos.forEach(producto => {
-									producto.Mostrar();
-								})
-								*/
-							} else {
-								this.onerror()
-							}
-						}
-						miniFirefox.onerror = function () {
-							error(this.statusText)
-						}
-
-						miniFirefox.send() //>>Da la orden de ejecutar la petición  - es un método de instancia
-		} else {
-			//Existe LS y podemos usarlo para crear los objetos producto
-			//alert('hay LocalStorage')
+		//la funcion then() tendrá programadas las instrucciones que hagan uso de esos datos que surjan del objeto promesa. 
+		promesa.then(function (rta) {
 			/*
-			let productos = Producto.parse( window.localStorage.getItem("PRODUCTOS"))
+			//puedo tomar como parametro lo que pasé por el ok() 
+			alert(rta)
+			*/
+			let productos = Producto.parse(rta)
+
 
 			productos.forEach(producto => {
-						producto.Mostrar();
-					})
-			*/
-			ok(window.localStorage.getItem("PRODUCTOS"))				
-		}
-	})
+				producto.Mostrar()
+			});
 
-					//la funcion then() tendrá programadas las instrucciones que hagan uso de esos datos que surjan del objeto promesa. 
-					promesa.then(function(rta){
-						/*
-						//puedo tomar como parametro lo que pasé por el ok() 
-						alert(rta)
-						*/
-						let productos = Producto.parse(rta)
+		}) //<-- ocurre cuando "sale bien"
 
-						
-						
-						
-						productos.forEach(producto => {
-							producto.Mostrar()
-						});
-						
-					}) //<-- ocurre cuando "sale bien"
+		//la funcion catch()
+		promesa.catch(function (rta) {
+			//alert(rta)
+			document.querySelector("#productos-destacados").innerHTML = '<div class="alert alert-danger">' + rta + '</div>'
 
-					//la funcion catch()
-					promesa.catch(function(rta){
-						//alert(rta)
-						document.querySelector("#productos-destacados").innerHTML = '<div class="alert alert-danger">'+rta+'</div>'
-						
-					}) //<-- ocurre cuando "sale mal"
+		}) //<-- ocurre cuando "sale mal"
 
-					//finally es la última instruccion de la cadena. El que queremos que ocurra sí o sí sin importar el resultado de la secuencia de instrucciones
-					promesa.finally(function(){
-						confirm("se entendió?")
-					})
-					
+		//finally es la última instruccion de la cadena. El que queremos que ocurra sí o sí sin importar el resultado de la secuencia de instrucciones
+		promesa.finally(function () {
+			confirm("se entendió?")
+		})
+
 
 			//////////////////////////////////////////////////////////////
-				
 
-		
-		</script>
-	</body>
+
+
+	</script>
+</body>
+
 </html>
