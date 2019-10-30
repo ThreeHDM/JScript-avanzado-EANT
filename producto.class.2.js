@@ -66,15 +66,15 @@ class Producto {
         
         //Creo un elemento <article></article> y comienzo a trabajar con el llamado Virtual DOM
         let ficha = document.createElement("article")
+
+        let estado = (this.disponible) ? "" : "bg-dark text-light"
         
 
             //creo el attr class y le agrego las clases a ficha
             ficha.classList.add("col-lg-4", "col-md-6", "mb-4", "producto")
 
 
-
-
-            ficha.innerHTML = `<div class="card h-100 bg-dark text-light">
+            ficha.innerHTML = `<div class="card h-100 ${estado}>
                                 <a href="#">
                                     <img class="card-img-top" src="${this.imagen}" alt="${this.nombre}">
                                 </a>
