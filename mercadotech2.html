@@ -31,28 +31,7 @@
 		<h2 class="w-100 my-3 p-3 border">&#x2B50; Productos Destacados</h2>
 
 		<!-- AREA PRODUCTOS DESTACADOS -->
-		<section id="productos-destacados" class="row">
-			<!-- Inicio Producto #1 -->
-			<article class="col-lg-4 col-md-6 mb-4 d-none producto">
-				<div class="card h-100">
-					<a href="#">
-						<img class="card-img-top" src="http://placehold.it/700x400" alt="">
-					</a>
-					<div class="card-body">
-						<h4 class="card-title">
-							<a href="#">Producto X</a>
-						</h4>
-						<h5>$999.99</h5>
-						<p class="card-text">No deje pasar esta oportunidad... COMPRE YA!</p>
-					</div>
-				</div>
-			</article>
-			<!-- Fin de Producto #1 -->
-
-
-
-
-		</section>
+		<section id="productos-destacados" class="row"></section>
 	</main>
 	<footer class="py-5 bg-dark">
 		<div class="container">
@@ -62,13 +41,13 @@
 	<script src="https://blackrockdigital.github.io/startbootstrap-shop-item/vendor/jquery/jquery.min.js"></script>
 	<script
 		src="https://blackrockdigital.github.io/startbootstrap-shop-item/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<script src="producto.class.js"></script>
+	<script src="producto.class.2.js"></script>
     <script>
         const crearCatalogo = items => {
 
             let productos = Producto.parse(items)
 
-            productos.forEach(producto => { producto.Mostrar() })
+            productos.forEach(producto => { producto.Mostrar("#productos-destacados") })
         }
 
         if (!window.localStorage.getItem("PRODUCTOS")) {
