@@ -101,7 +101,10 @@ class Producto {
     //Métodos de Clase (estáticos)
     static parse(json){ 
         //Entra un JSON y devuelvo objetos Producto
-        let datos = JSON.parse(json) // de JSON a Object
+        //let datos = JSON.parse(json) // de JSON a Object
+
+        //typeof permite validar el tipo de dato primitivo
+        let datos = (typeof json == "string") ? JSON.parse(json) : json 
 
         //valido si es una instancia de Array
         if (datos instanceof Array) {

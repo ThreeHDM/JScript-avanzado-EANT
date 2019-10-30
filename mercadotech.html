@@ -99,20 +99,20 @@
 			//vamos a setear un tiempo para que se ejecute una funcion
 			/*
 
-window.setTimeout(function(){
-let numero = Math.random() 
-if ( numero < 0.5) {
-ok(numero + "Vale menos que 0,5") //se ejecuta en then()
-} else {
-error(numero + "Vale más que 0,5") //se ejecuta en catch()
-}
-}, 1000) //luego de X segundos
-*/
+			window.setTimeout(function(){
+			let numero = Math.random() 
+			if ( numero < 0.5) {
+			ok(numero + "Vale menos que 0,5") //se ejecuta en then()
+			} else {
+			error(numero + "Vale más que 0,5") //se ejecuta en catch()
+			}
+			}, 1000) //luego de X segundos
+			*/
 			if (!window.localStorage.getItem("PRODUCTOS")) {
 				//Si no existen los datos en localStorage entra acá	
 
 				const miniFirefox = new XMLHttpRequest();
-				miniFirefox.open("GET", "https://api.myjson.com/bins/@@@@@1111224667r7456");
+				miniFirefox.open("GET", "https://api.myjson.com/bins/dcg2p");
 				miniFirefox.onload = function () {
 					if (this.status == 200) {
 						//Guardar los datos de la petición. Siempre guardo un string, en este caso la respuesta JSON
@@ -180,14 +180,42 @@ error(numero + "Vale más que 0,5") //se ejecuta en catch()
 		}) //<-- ocurre cuando "sale mal"
 
 		//finally es la última instruccion de la cadena. El que queremos que ocurra sí o sí sin importar el resultado de la secuencia de instrucciones
-		promesa.finally(function () {
+		/*promesa.finally(function () {
 			confirm("se entendió?")
 		})
-
+		*/
 
 			//////////////////////////////////////////////////////////////
+			//* AJAX Moderno con el método fetch() *//
 
+			fetch("https://api.myjson.com/bins/dcg2p").then(function(rta) {
+				//en rta se guarda toda la promesa, no solo los datos. Se guarda toda la info
+				//la api fetch viene con un metodo de parseo incorporado json() que retorna un objeto promise
+				//console.log(rta.json())
+				
+				/*
+				//esta es una forma de hacerlo dentro del then. Sino podemos concatenar thens
+				let objetos = rta.json()
+				objetos.then(function(items){
+					console.log(items)
+				})
+				*/
 
+				return rta.json()
+				
+			}).then(function(items){
+				//acá estoy concatenando then que recibe lo que retorna el otro then
+				return items[2]
+			}).then(function (item) {
+				
+				return item.Nombre
+			}).then(function(nombre){
+				return nombre.substr(0,1)
+			}).then(function (letra) {
+				console.log('La primer letra es ' + letra)
+			})
+			
+			
 
 	</script>
 </body>
