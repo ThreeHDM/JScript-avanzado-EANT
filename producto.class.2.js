@@ -29,6 +29,13 @@ class Producto {
         this.precio = p;
         this.imagen = i;
         this.disponible = d;
+        //creamos una propiedad para manipular el Virtual DOM. En ella voy a representar el elemento donde se mostraran los datos. En nuestro caso <article>
+        this.vDOM = document.createElement("article")
+        //propiedad estado del tipo objeto con datos
+        this.state = {
+            anexado : false, // predeterminado en false
+            version : 0 //me sirve para guardar qué versión del objeto es. Sumo 1 por cada cambio
+        }
     }
 
     //Propiedades L/E
@@ -48,47 +55,80 @@ class Producto {
 
     set Disponible(value){
         //aqui se validaría el value
+        
+        let accion = value ? "habilitar" : "deshabilitar"
 
-        if (value == this.disponible) {
-            alert("La disponibilidad ya está en :" + value)
-            return // el return frena toda la ejecución de la función
-        }
-
-        let estado = value ? "habilitar" : "deshabilitar"
-
-        if(confirm(`¿Desea ${estado} el producto ${this.nombre}`)){
+        if(confirm(`¿Desea ${accion} el producto ${this.nombre}`)) //acá el if funciona sin llaves
             this.disponible = value;
-        }
     }
 
     //Métodos de Instancia
     Mostrar(selector){
         
-        //Creo un elemento <article></article> y comienzo a trabajar con el llamado Virtual DOM
-        let ficha = document.createElement("article")
-
-        let estado = (this.disponible) ? "" : "bg-dark text-light"
         
 
+        let estilo = this.disponible ? "" : "bg-dark text-light"
+        
+        //Tipos de manipulación del DOM (estructura, comportamiento y contenido)
+
             //creo el attr class y le agrego las clases a ficha
-            ficha.classList.add("col-lg-4", "col-md-6", "mb-4", "producto")
+            
+            //Manipulación del DOM del tipo ESTRUCTURA: todo lo que modifique los atributos
+            this.vDOM.classList.add("col-lg-4", "col-md-6", "mb-4", "producto")
+            
+            //Manipulación de CONTENIDO
+            //En frameworks como REACT esto se llama el render. Se renderiza con cada cambio
+            this.vDOM.innerHTML = `<div class="card h-100 ${estilo}>
+                                    <a href="#">
+                                        <img class="card-img-top" src="${this.imagen}" alt="${this.nombre}">
+                                    </a>
+                                    <div class="card-body">
+                                        <h4 class="card-title">
+                                            <a href="#">Producto ${this.nombre}</a>
+                                        </h4>
+                                        <div class="btn btn-warning">${this.Precio}</div>
+                                        <button class="btn ${this.disponible ? "btn-danger" : "btn-success"}">${this.disponible ? "Desactivar" : "Activar"}</button>
+                                        <p class="card-text">Quedan ${this.stock} unidades</p>
+                                    </div>
+                                </div>`
 
+            //Manipulación de COMPORTAMIENTO: programa la reacción ante lo que el user haga con un elemento     
+            /*                       
+            ficha.querySelector("button").onclick = function(){
+                //siempre que usamos funciones que se ejecutan mediante objetos (en este caso el button) this se referirá a ese objeto
 
-            ficha.innerHTML = `<div class="card h-100 ${estado}>
-                                <a href="#">
-                                    <img class="card-img-top" src="${this.imagen}" alt="${this.nombre}">
-                                </a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Producto ${this.nombre}</a>
-                                    </h4>
-                                    <h5>${this.Precio}</h5>
-                                    <p class="card-text">Quedan ${this.stock} unidades</p>
-                                </div>
-                            </div>`
+                alert(`Hola soy el producto ${this.nombre}`)
+            }
+            */
+
+            //Para evitar poner funciones dentro del método y que choquen los this, se inventó la arrow function. No usa de referencia al objeto en donde se ejecuta
+            this.vDOM.querySelector("button").onclick = (e) => {
+                //console.log(this)
+                //alert(`Hola soy el producto ${this.nombre}`)
+                /*
+                let accion = this.disponible ? "desactivar" : "activar"
+
+                let pregunta = `¿Está seguro que desea ${accion} el producto ${this.nombre}?`;
+
+                if(confirm(pregunta)) {
+                    this.disponible = !this.disponible
+                }
+                */
+            this.Disponible = !this.disponible
+            this.Precio = prompt("Ingrese nuevo precio:")
+            this.Mostrar()
+            console.log(this)
+            }
+
+            //Para saber si tengo que anexar el vDOM tengo que ver el 'estado'. Cambios en el vDOM, en el componente es un cambio de ese estado. El estado es una serie de propiedades que permiten saber cómo está el objeto.
+
 
         //Anexo como nuevo hijo a la respectiva ficha
-        document.querySelector(selector).appendChild(ficha)
+        if (!this.state.anexado) {
+            document.querySelector(selector).appendChild(this.vDOM)
+            this.state.anexado = true
+        }
+        
 
     }
 
