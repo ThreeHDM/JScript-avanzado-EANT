@@ -86,8 +86,8 @@ class Producto {
                                         <h4 class="card-title">
                                             <a href="#">Producto ${this.nombre}</a>
                                         </h4>
-                                        <div class="btn btn-warning">${this.Precio}</div>
-                                        <button class="btn ${this.disponible ? "btn-danger" : "btn-success"}">${this.disponible ? "Desactivar" : "Activar"}</button>
+                                        <button id="btn-precio" class="btn btn-warning">${this.Precio}</button>
+                                        <button id="btn-disponible" class="btn ${this.disponible ? "btn-danger" : "btn-success"}">${this.disponible ? "Desactivar" : "Activar"}</button>
                                         <p class="card-text">Quedan ${this.stock} unidades</p>
                                     </div>
                                 </div>`
@@ -102,7 +102,7 @@ class Producto {
             */
 
             //Para evitar poner funciones dentro del método y que choquen los this, se inventó la arrow function. No usa de referencia al objeto en donde se ejecuta
-            this.vDOM.querySelector("button").onclick = (e) => {
+            this.vDOM.querySelector("#btn-disponible").onclick = (e) => {
                 //console.log(this)
                 //alert(`Hola soy el producto ${this.nombre}`)
                 /*
@@ -115,9 +115,14 @@ class Producto {
                 }
                 */
             this.Disponible = !this.disponible
-            this.Precio = prompt("Ingrese nuevo precio:")
             this.Mostrar()
-            console.log(this)
+            
+            }
+
+            this.vDOM.querySelector("#btn-precio").onclick = (e) => {
+                this.Precio = prompt("Ingrese nuevo precio:")
+                this.Mostrar()
+                //console.log(this)
             }
 
             //Para saber si tengo que anexar el vDOM tengo que ver el 'estado'. Cambios en el vDOM, en el componente es un cambio de ese estado. El estado es una serie de propiedades que permiten saber cómo está el objeto.
