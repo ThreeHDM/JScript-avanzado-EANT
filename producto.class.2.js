@@ -15,7 +15,6 @@
 
     Métodos de clase: son las funciones clásicas que conocemos. Estos no necesitan que exista un objeto para ser ejecutado. Son funciones encapsuladas. Debo acceder primero a la clase y luego ejeucutar el método. No pueden ser accedidos en una instancia del objeto
 
-
  */
 
 //La convención es en mayuscula y singular
@@ -38,7 +37,7 @@ class Producto {
         }
     }
 
-    //Propiedades L/E
+    //Propiedades Lectura/Escritura
     get Precio(){
         //al usar el método Precio le agrega el IVA con dos decimales
         return  "$" + (this.precio * 1.21).toFixed(2);
@@ -46,6 +45,7 @@ class Producto {
     
     //lo utilizo para setear el valor de la propiedad. Puedo validar el value
     set Precio(value){
+        
         if (value != "" && value != null && value!=undefined && !isNaN(value)) {
             this.precio = value
         } else {
@@ -64,8 +64,6 @@ class Producto {
 
     //Métodos de Instancia
     Mostrar(selector){
-        
-        
 
         let estilo = this.disponible ? "" : "bg-dark text-light"
         
@@ -86,8 +84,9 @@ class Producto {
                                         <h4 class="card-title">
                                             <a href="#">Producto ${this.nombre}</a>
                                         </h4>
-                                        <button id="btn-precio" class="btn btn-warning">${this.Precio}</button>
-                                        <button id="btn-disponible" class="btn ${this.disponible ? "btn-danger" : "btn-success"}">${this.disponible ? "Desactivar" : "Activar"}</button>
+                                        <button class="btn btn-warning btn-precio">${this.Precio}</button>
+                                        <button class="btn ${this.disponible ? "btn-danger" : "btn-success"} btn-disponible">${this.disponible ? "Desactivar" : "Activar"}</button>
+                                        <button class="btn btn-primary mt-2 btn-descuento">Aplicar descuento</button>
                                         <p class="card-text">Quedan ${this.stock} unidades</p>
                                     </div>
                                 </div>`
@@ -102,7 +101,7 @@ class Producto {
             */
 
             //Para evitar poner funciones dentro del método y que choquen los this, se inventó la arrow function. No usa de referencia al objeto en donde se ejecuta
-            this.vDOM.querySelector("#btn-disponible").onclick = (e) => {
+            this.vDOM.querySelector(".btn-disponible").onclick = (e) => {
                 //console.log(this)
                 //alert(`Hola soy el producto ${this.nombre}`)
                 /*
@@ -119,11 +118,14 @@ class Producto {
             
             }
 
-            this.vDOM.querySelector("#btn-precio").onclick = (e) => {
-                this.Precio = prompt("Ingrese nuevo precio:")
+            this.vDOM.querySelector(".btn-precio").onclick = (e) => {
+                this.Precio = prompt(`Indique el precio de ${this.nombre}`)
                 this.Mostrar()
                 //console.log(this)
             }
+
+            //toda función tiene un método implicito llamado bind(), que permite decirle que objeto ejecutó la orden de correr esa función
+            this.vDOM.querySelector(".btn-descuento").onclick = this.aplicarDescuento.bind(this)
 
             //Para saber si tengo que anexar el vDOM tengo que ver el 'estado'. Cambios en el vDOM, en el componente es un cambio de ese estado. El estado es una serie de propiedades que permiten saber cómo está el objeto.
 
@@ -133,14 +135,19 @@ class Producto {
             document.querySelector(selector).appendChild(this.vDOM)
             this.state.anexado = true
         }
-        
 
     }
 
-    aplicarDescuento(valor){
-        let importe = (this.precio * valor)  / 100
+    aplicarDescuento(valor = false){
+        
+        //Si en la asignacion valor es null o undefined busca el siguiente valor en el or
+        //valor = valor || prompt(`Ingrese el valor del descuento para ${this.nombre}`)        
 
+        valor = isNaN(valor) ? prompt(`Ingrese el valor del descuento para ${this.nombre}`) : valor
+
+        let importe = (this.precio * valor)  / 100
         this.precio-= importe
+        this.Mostrar()
     }
 
     //Métodos de Clase (estáticos)
@@ -174,9 +181,6 @@ class Producto {
         } else {
             //console.log("No convierte pues no es ni array ni objeto")
         }
-
-        
-
         
     }
 

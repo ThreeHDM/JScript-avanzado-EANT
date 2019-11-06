@@ -46,8 +46,12 @@
         const crearCatalogo = items => {
 
             let productos = Producto.parse(items)
+			let descuento = confirm("Aplicar descuento del 50%?") ? 50 : -1
 
-            productos.forEach(producto => { producto.Mostrar("#productos-destacados") })
+            productos.forEach(producto => { 
+				producto.Mostrar("#productos-destacados")
+				producto.aplicarDescuento(descuento)
+			 })
         }
 
         if (!window.localStorage.getItem("PRODUCTOS")) {
