@@ -20,9 +20,10 @@
 //La convención es en mayuscula y singular
 class Producto {
     //Constructor
-    constructor(n, s, p, i, d = true){
+    constructor(id, n, s, p, i, d = true){
         //en JS las propiedades se declaran en el constructor siempre // Esto técnicamente son Atributos (en otros lenguajes). 
         //Una técnica para no confundir atributos con propiedades es nombrarlos aquí de forma aleatoria
+        this.ID = id
         this.nombre = n;
         this.stock = s;
         this.precio = p;
@@ -73,6 +74,8 @@ class Producto {
             
             //Manipulación del DOM del tipo ESTRUCTURA: todo lo que modifique los atributos
             this.vDOM.classList.add("col-lg-4", "col-md-6", "mb-4", "producto")
+
+            this.vDOM.id = `prod-${this.ID}`
             
             //Manipulación de CONTENIDO
             //En frameworks como REACT esto se llama el render. Se renderiza con cada cambio
@@ -136,6 +139,8 @@ class Producto {
             this.state.anexado = true
         }
 
+        this.sincronizar()
+
     }
 
     aplicarDescuento(valor = false){
@@ -148,6 +153,29 @@ class Producto {
         let importe = (this.precio * valor)  / 100
         this.precio-= importe
         this.Mostrar()
+    }
+
+    sincronizar(){
+
+        let storage = JSON.parse(localStorage.getItem("PRODUCTOS"))
+        
+        storage.forEach((item) => {
+
+            if (item.idProducto == this.ID) {
+                item.Nombre = this.nombre
+                item.Stock = this.stock
+                item.Precio = this.precio
+                item.Disponible = this.disponible
+
+                //lo uso como break para que deje de iterar y se detenga
+                return 
+            }
+
+        })
+
+        localStorage.setItem("PRODUCTOS", JSON.stringify(storage))
+        
+
     }
 
     //Métodos de Clase (estáticos)
@@ -170,13 +198,13 @@ class Producto {
             //Instanciamos Objeto Producto con los datos de cada Object 
             //Habrá un retorno por cada iteración
             //Retornar el Array nuevo una vez que se hayan instanciado todos los Objetos Producto
-            return datos.map( item  => new Producto(item.Nombre, item.Stock, item.Precio, item.Imagen))
+            return datos.map( item  => new Producto(item.idProducto, item.Nombre, item.Stock, item.Precio, item.Imagen))
 
         //Valido si es un Object, para retornar uno solo
         } else if (datos instanceof Object) {
             //console.log("Voy a convertir un Objeto en Producto")
 
-            return new Producto(datos.Nombre, datos.Stock, datos.Precio, datos.Imagen)
+            return new Producto(item.idProducto, datos.Nombre, datos.Stock, datos.Precio, datos.Imagen)
 
         } else {
             //console.log("No convierte pues no es ni array ni objeto")
