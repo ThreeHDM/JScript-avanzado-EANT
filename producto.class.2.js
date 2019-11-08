@@ -52,6 +52,8 @@ class Producto {
         } else {
             console.error("ERROR: Valor ingrsado No válido")
         }
+
+        this.sincronizar()
     }
 
     set Disponible(value){
@@ -61,6 +63,10 @@ class Producto {
 
         if(confirm(`¿Desea ${accion} el producto ${this.nombre}`)) //acá el if funciona sin llaves
             this.disponible = value;
+
+
+        this.sincronizar()
+
     }
 
     //Métodos de Instancia
@@ -81,7 +87,7 @@ class Producto {
             //En frameworks como REACT esto se llama el render. Se renderiza con cada cambio
             this.vDOM.innerHTML = `<div class="card h-100 ${estilo}>
                                     <a href="#">
-                                        <img class="card-img-top" src="${this.imagen}" alt="${this.nombre}">
+                                        <img class="card-img-top img-fluid" src="${this.imagen}" alt="${this.nombre}">
                                     </a>
                                     <div class="card-body">
                                         <h4 class="card-title">
@@ -89,7 +95,7 @@ class Producto {
                                         </h4>
                                         <button class="btn btn-warning btn-precio">${this.Precio}</button>
                                         <button class="btn ${this.disponible ? "btn-danger" : "btn-success"} btn-disponible">${this.disponible ? "Desactivar" : "Activar"}</button>
-                                        <button class="btn btn-primary mt-2 btn-descuento">Aplicar descuento</button>
+                                        <button class="btn btn-primary btn-descuento">Aplicar descuento</button>
                                         <p class="card-text">Quedan ${this.stock} unidades</p>
                                     </div>
                                 </div>`
@@ -132,6 +138,12 @@ class Producto {
 
             //Para saber si tengo que anexar el vDOM tengo que ver el 'estado'. Cambios en el vDOM, en el componente es un cambio de ese estado. El estado es una serie de propiedades que permiten saber cómo está el objeto.
 
+            this.vDOM.querySelector("img").onclick = (e) => {
+                this.imagen = prompt(`Ingrese la URL para el ${this.nombre}`)
+                this.Mostrar()
+                this.sincronizar()
+                //console.log(this)
+            }
 
         //Anexo como nuevo hijo a la respectiva ficha
         if (!this.state.anexado) {
@@ -139,7 +151,7 @@ class Producto {
             this.state.anexado = true
         }
 
-        this.sincronizar()
+        //this.sincronizar()
 
     }
 
@@ -153,12 +165,13 @@ class Producto {
         let importe = (this.precio * valor)  / 100
         this.precio-= importe
         this.Mostrar()
+        this.sincronizar()
     }
 
     sincronizar(){
 
         let storage = JSON.parse(localStorage.getItem("PRODUCTOS"))
-        
+        /*
         storage.forEach((item) => {
 
             if (item.idProducto == this.ID) {
@@ -170,11 +183,21 @@ class Producto {
                 //lo uso como break para que deje de iterar y se detenga
                 return 
             }
-
         })
-
-        localStorage.setItem("PRODUCTOS", JSON.stringify(storage))
+        */
         
+        //Nuevo Método de ES6 para trabajar con arquitectura de datos. Método find() y su derivado findIndex()
+        let foundItem = storage.find(item => item.idProducto == this.ID)
+        let foundIndex = storage.findIndex(item => item.idProducto == this.ID)
+        
+        storage[foundIndex].Nombre = this.nombre
+        storage[foundIndex].Stock = this.stock
+        storage[foundIndex].Precio = this.precio
+        storage[foundIndex].Disponible = this.disponible
+        storage[foundIndex].Imagen = this.imagen
+        
+        console.log(storage[foundIndex]);
+        localStorage.setItem("PRODUCTOS", JSON.stringify(storage))
 
     }
 
@@ -198,13 +221,13 @@ class Producto {
             //Instanciamos Objeto Producto con los datos de cada Object 
             //Habrá un retorno por cada iteración
             //Retornar el Array nuevo una vez que se hayan instanciado todos los Objetos Producto
-            return datos.map( item  => new Producto(item.idProducto, item.Nombre, item.Stock, item.Precio, item.Imagen))
+            return datos.map( item  => new Producto(item.idProducto, item.Nombre, item.Stock, item.Precio, item.Imagen, item.Disponible))
 
         //Valido si es un Object, para retornar uno solo
         } else if (datos instanceof Object) {
             //console.log("Voy a convertir un Objeto en Producto")
 
-            return new Producto(item.idProducto, datos.Nombre, datos.Stock, datos.Precio, datos.Imagen)
+            return new Producto(item.idProducto, datos.Nombre, datos.Stock, datos.Precio, datos.Imagen, datos.Disponible)
 
         } else {
             //console.log("No convierte pues no es ni array ni objeto")

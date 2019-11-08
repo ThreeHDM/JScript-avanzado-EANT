@@ -39,19 +39,33 @@
 		</div>
 	</footer>
 	<script src="https://blackrockdigital.github.io/startbootstrap-shop-item/vendor/jquery/jquery.min.js"></script>
+	<script src="https://apis.google.com/js/api:client.js"></script>
 	<script
 		src="https://blackrockdigital.github.io/startbootstrap-shop-item/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="producto.class.2.js"></script>
     <script>
+		///////////////////LOGIN CON GOOGLE ///////////////////
+
+		gapi.load('auth2', function(){
+			//al definir una variable sin var su scope es global. Es lo mismo que asignar a window.
+			window.auth = gapi.auth2.init({
+				client_id: '423313310674-b168uj7lhbe2o18j8nekvu17709nkmqn.apps.googleusercontent.com',
+				cookiepolicy: 'single_host_origin'
+			})
+		})
+
+		///////////////////LOGIN CON GOOGLE ///////////////////
+
+
         const crearCatalogo = items => {
 
             let productos = Producto.parse(items)
-			let descuento = confirm("Aplicar descuento del 50%?") ? 50 : -1
+			//let descuento = confirm("Aplicar descuento del 50%?") ? 50 : -1
 
             productos.forEach(producto => { 
 				producto.Mostrar("#productos-destacados")
-				producto.aplicarDescuento(descuento)
-			 })
+				//producto.aplicarDescuento(descuento)
+			})
         }
 
         if (!window.localStorage.getItem("PRODUCTOS")) {
