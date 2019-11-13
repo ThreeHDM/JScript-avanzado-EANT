@@ -20,8 +20,11 @@
 			</button>
 			<nav class="collapse navbar-collapse" id="menu">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href="#">&#x1F512; Ingresar</a>
+					<li class="nav-item">
+						<a id="login" class="nav-link" href="#">&#x1F512; Ingresar</a>
+					</li>
+					<li class="nav-item d-none">
+						<a id="logout" class="nav-link" href="#">Bienvenido <span>{{USUARIO}}</span> - salir -</a>
 					</li>
 				</ul>
 			</nav>
@@ -44,7 +47,15 @@
 		src="https://blackrockdigital.github.io/startbootstrap-shop-item/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="producto.class.2.js"></script>
     <script>
+
+		
 		///////////////////LOGIN CON GOOGLE ///////////////////
+
+		const bienvenida = () => {
+			document.querySelector('#logout span').innerText = user.getName()
+			document.querySelector('#logout').parentNode.classList.remove("d-none")
+			document.querySelector('#login').parentNode.classList.add("d-none")
+		}
 
 		gapi.load('auth2', function(){
 			//al definir una variable sin var su scope es global. Es lo mismo que asignar a window.
@@ -59,6 +70,27 @@
 		//auth.signIn() // <-- Abre el popUp para loguearse
 		//auth.signOut() // <-- Cierra la sesión del user
 		//auth.currentUser.get() // <-- Obtiene los datos del usuario
+
+		document.querySelector("#login").onclick = function(e){
+			e.preventDefault()
+			
+			if (auth.isSignedIn.get()) {
+				//Esta logueado
+
+				bienvenida()
+
+			} else {
+				//No está logueado
+				auth.signIn().then(function(){
+					//creo una variable global user
+					window.user = auth.currentUser.get().getBasicProfile()//Aquí guardo los datos del usuario
+
+					bienvenida()
+
+
+				})
+			}
+		}
 
 		///////////////////LOGIN CON GOOGLE ///////////////////
 
