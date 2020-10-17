@@ -1,0 +1,702 @@
+[
+    {
+        "Marca": "Apple",
+        "Stock": 500,
+        "Imagen": "https://picsum.photos/id/101/960/640",
+        "Nombre": "iPhone 6",
+        "Precio": 499.99,
+        "Categoria": "Smartphone",
+        "idProducto": 1,
+        "Presentacion": "16GB"
+    },
+    {
+        "Marca": "Apple",
+        "Stock": 300,
+        "Imagen": "https://picsum.photos/id/102/960/640",
+        "Nombre": "iPad Pro",
+        "Precio": 599.99,
+        "Categoria": "Tablets",
+        "idProducto": 2,
+        "Presentacion": "32GB"
+    },
+    {
+        "Marca": "Google",
+        "Stock": 300,
+        "Imagen": "https://picsum.photos/id/103/960/640",
+        "Nombre": "Nexus 7",
+        "Precio": 299.99,
+        "Categoria": "Tablets",
+        "idProducto": 3,
+        "Presentacion": "32GB"
+    },
+    {
+        "Marca": "Samsung",
+        "Stock": 650,
+        "Imagen": "https://picsum.photos/id/104/960/640",
+        "Nombre": "Galaxy S7",
+        "Precio": 459.9,
+        "Categoria": "Smartphone",
+        "idProducto": 4,
+        "Presentacion": "64GB"
+    },
+    {
+        "Marca": "Motorola",
+        "Stock": 750,
+        "Imagen": "https://picsum.photos/id/14/960/640",
+        "Nombre": "Moto G",
+        "Precio": 489.99,
+        "Categoria": "Smartphone",
+        "idProducto": 5,
+        "Presentacion": "8GB"
+    },
+    {
+        "Marca": "LG",
+        "Stock": 350,
+        "Imagen": "https://picsum.photos/id/106/960/640",
+        "Nombre": "L40",
+        "Precio": 199.69,
+        "Categoria": "Smartphone",
+        "idProducto": 6,
+        "Presentacion": "24GB"
+    },
+    {
+        "Marca": "Philips",
+        "Stock": 40,
+        "Imagen": "https://picsum.photos/id/107/960/640",
+        "Nombre": "TV LCD Modelo PFL3403",
+        "Precio": 2199,
+        "Categoria": "Televisores",
+        "idProducto": 7,
+        "Presentacion": "19"
+    },
+    {
+        "Marca": "Samsung",
+        "Stock": 30,
+        "Imagen": "https://picsum.photos/id/108/960/640",
+        "Nombre": "TV LCD Modelo LN22A450",
+        "Precio": 2399,
+        "Categoria": "Televisores",
+        "idProducto": 8,
+        "Presentacion": "22"
+    },
+    {
+        "Marca": "Noblex",
+        "Stock": 25,
+        "Imagen": "https://picsum.photos/id/109/960/640",
+        "Nombre": "TV LCD Modelo LC813H",
+        "Precio": 2999,
+        "Categoria": "Televisores",
+        "idProducto": 9,
+        "Presentacion": "32"
+    },
+    {
+        "Marca": "LG",
+        "Stock": 25,
+        "Imagen": "https://picsum.photos/id/1010/960/640",
+        "Nombre": "TV LCD Modelo 26LG30R",
+        "Precio": 2999,
+        "Categoria": "Televisores",
+        "idProducto": 10,
+        "Presentacion": "26"
+    },
+    {
+        "Marca": "Hitachi",
+        "Stock": 20,
+        "Imagen": "https://picsum.photos/id/1011/960/640",
+        "Nombre": "TV LCD Modelo CDH-L26S02",
+        "Precio": 3099,
+        "Categoria": "Televisores",
+        "idProducto": 11,
+        "Presentacion": "26"
+    },
+    {
+        "Marca": "Philco",
+        "Stock": 20,
+        "Imagen": "https://picsum.photos/id/1012/960/640",
+        "Nombre": "TV LCD Modelo PL3219",
+        "Precio": 3399,
+        "Categoria": "Televisores",
+        "idProducto": 12,
+        "Presentacion": "32"
+    },
+    {
+        "Marca": "Admiral",
+        "Stock": 15,
+        "Imagen": "https://picsum.photos/id/1013/960/640",
+        "Nombre": "CPU LE1250DVD2GB160VS",
+        "Precio": 2199,
+        "Categoria": "Computadoras",
+        "idProducto": 13,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Admiral",
+        "Stock": 8,
+        "Imagen": "https://picsum.photos/id/1014/960/640",
+        "Nombre": "CPU A64X246DV2G160VBOF",
+        "Precio": 2499,
+        "Categoria": "Computadoras",
+        "idProducto": 14,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Admiral",
+        "Stock": 5,
+        "Imagen": "https://picsum.photos/id/1015/960/640",
+        "Nombre": "CPU E5200DVDR2GB320VB",
+        "Precio": 2699,
+        "Categoria": "Computadoras",
+        "idProducto": 15,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Compaq Presario",
+        "Stock": 5,
+        "Imagen": "https://picsum.photos/id/1016/960/640",
+        "Nombre": "CPU SG3308LA",
+        "Precio": 3099,
+        "Categoria": "Computadoras",
+        "idProducto": 16,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Epson",
+        "Stock": 18,
+        "Imagen": "https://picsum.photos/id/13/960/640",
+        "Nombre": "Impresora T23",
+        "Precio": 219,
+        "Categoria": "Impresoras",
+        "idProducto": 17,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Hewlett Packard",
+        "Stock": 20,
+        "Imagen": "https://picsum.photos/id/1018/960/640",
+        "Nombre": "Impresora DJ-6940",
+        "Precio": 349,
+        "Categoria": "Impresoras",
+        "idProducto": 18,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Epson",
+        "Stock": 12,
+        "Imagen": "https://picsum.photos/id/1019/960/640",
+        "Nombre": "Impresora T33",
+        "Precio": 399,
+        "Categoria": "Impresoras",
+        "idProducto": 19,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Hewlett Packard",
+        "Stock": 8,
+        "Imagen": "https://picsum.photos/id/1020/960/640",
+        "Nombre": "Impresora K5400 ",
+        "Precio": 499,
+        "Categoria": "Impresoras",
+        "idProducto": 20,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Philco",
+        "Stock": 0,
+        "Imagen": "https://picsum.photos/id/1021/960/640",
+        "Nombre": "Home Cinema SPH70",
+        "Precio": 319,
+        "Categoria": "Home Theater",
+        "idProducto": 21,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Noblex",
+        "Stock": 0,
+        "Imagen": "https://picsum.photos/id/1022/960/640",
+        "Nombre": "Home Cinema AMX115",
+        "Precio": 419,
+        "Categoria": "Home Theater",
+        "idProducto": 22,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "X-View",
+        "Stock": 0,
+        "Imagen": "https://picsum.photos/id/1023/960/640",
+        "Nombre": "Home Cinema HT E 860",
+        "Precio": 599,
+        "Categoria": "Home Theater",
+        "idProducto": 23,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Sanyo",
+        "Stock": 5,
+        "Imagen": "https://picsum.photos/id/1024/960/640",
+        "Nombre": "Home Cinema DC-T990",
+        "Precio": 759,
+        "Categoria": "Home Theater",
+        "idProducto": 24,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Noblex",
+        "Stock": 18,
+        "Imagen": "https://picsum.photos/id/1025/960/640",
+        "Nombre": "Home Cinema HT-1105U",
+        "Precio": 829,
+        "Categoria": "Home Theater",
+        "idProducto": 25,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "LG",
+        "Stock": 6,
+        "Imagen": "https://picsum.photos/id/1026/960/640",
+        "Nombre": "Home Cinema HT304SL-A2",
+        "Precio": 949,
+        "Categoria": "Home Theater",
+        "idProducto": 26,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Samsung",
+        "Stock": 22,
+        "Imagen": "https://picsum.photos/id/1027/960/640",
+        "Nombre": "Home Cinema HT-Z110",
+        "Precio": 999,
+        "Categoria": "Home Theater",
+        "idProducto": 27,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Philips",
+        "Stock": 18,
+        "Imagen": "https://picsum.photos/id/1028/960/640",
+        "Nombre": "Home Cinema HTS3011/55",
+        "Precio": 1099,
+        "Categoria": "Home Theater",
+        "idProducto": 28,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "LG",
+        "Stock": 15,
+        "Imagen": "https://picsum.photos/id/1029/960/640",
+        "Nombre": "Home Cinema HT503SH",
+        "Precio": 1299,
+        "Categoria": "Home Theater",
+        "idProducto": 29,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "LG",
+        "Stock": 12,
+        "Imagen": "https://picsum.photos/id/12/960/640",
+        "Nombre": "Home Cinema HT503SH-AM",
+        "Precio": 1299,
+        "Categoria": "Home Theater",
+        "idProducto": 30,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Sony",
+        "Stock": 7,
+        "Imagen": "https://picsum.photos/id/1031/960/640",
+        "Nombre": "Home Cinema HT-IS10",
+        "Precio": 1499,
+        "Categoria": "Home Theater",
+        "idProducto": 31,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Philips",
+        "Stock": 5,
+        "Imagen": "https://picsum.photos/id/1032/960/640",
+        "Nombre": "Home Cinema HTS3365/55",
+        "Precio": 1599,
+        "Categoria": "Home Theater",
+        "idProducto": 32,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Noblex",
+        "Stock": 5,
+        "Imagen": "https://picsum.photos/id/1033/960/640",
+        "Nombre": "Radio Port RP 299",
+        "Precio": 49,
+        "Categoria": "Radio",
+        "idProducto": 33,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Ken Brown",
+        "Stock": 15,
+        "Imagen": "https://picsum.photos/id/11/960/640",
+        "Nombre": "Radio DX-365",
+        "Precio": 79,
+        "Categoria": "Radio",
+        "idProducto": 34,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Sony",
+        "Stock": 15,
+        "Imagen": "https://picsum.photos/id/1035/960/640",
+        "Nombre": "Radio ICF-S10MK2/SCE",
+        "Precio": 79,
+        "Categoria": "Radio",
+        "idProducto": 35,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Sony",
+        "Stock": 15,
+        "Imagen": "https://picsum.photos/id/1036/960/640",
+        "Nombre": "Radio ICF-18 ",
+        "Precio": 99,
+        "Categoria": "Radio",
+        "idProducto": 36,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Sony",
+        "Stock": 8,
+        "Imagen": "https://picsum.photos/id/1037/960/640",
+        "Nombre": "Radio ICF-303/304 AM-FM",
+        "Precio": 129,
+        "Categoria": "Radio",
+        "idProducto": 37,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Sony",
+        "Stock": 10,
+        "Imagen": "https://picsum.photos/id/1038/960/640",
+        "Nombre": "Radio SRF-59/SC E",
+        "Precio": 129,
+        "Categoria": "Radio",
+        "idProducto": 38,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Admiral",
+        "Stock": 12,
+        "Imagen": "https://picsum.photos/id/1039/960/640",
+        "Nombre": "Notebook C2D2VB250WC14",
+        "Precio": 3699,
+        "Categoria": "Notebooks",
+        "idProducto": 39,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Compaq Presario",
+        "Stock": 9,
+        "Imagen": "https://picsum.photos/id/1040/960/640",
+        "Nombre": "Notebook CQ40-300",
+        "Precio": 2999,
+        "Categoria": "Notebooks",
+        "idProducto": 40,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Hewlett Packard",
+        "Stock": 7,
+        "Imagen": "https://picsum.photos/id/1041/960/640",
+        "Nombre": "Notebook DV2-1010",
+        "Precio": 3999,
+        "Categoria": "Notebooks",
+        "idProducto": 41,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Hewlett Packard",
+        "Stock": 9,
+        "Imagen": "https://picsum.photos/id/1042/960/640",
+        "Nombre": "Notebook DV4-1212",
+        "Precio": 4199,
+        "Categoria": "Notebooks",
+        "idProducto": 42,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Hewlett Packard",
+        "Stock": 10,
+        "Imagen": "https://picsum.photos/id/1043/960/640",
+        "Nombre": "Notebook DV5-1310",
+        "Precio": 4999,
+        "Categoria": "Notebooks",
+        "idProducto": 43,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Philips",
+        "Stock": 15,
+        "Imagen": "https://picsum.photos/id/1044/960/640",
+        "Nombre": "Telefono DECT1221S",
+        "Precio": 169,
+        "Categoria": "Telefonia Fija",
+        "idProducto": 44,
+        "Presentacion": "Inalambrico"
+    },
+    {
+        "Marca": "Philips",
+        "Stock": 8,
+        "Imagen": "https://picsum.photos/id/1045/960/640",
+        "Nombre": "Telefono CD1401B",
+        "Precio": 169,
+        "Categoria": "Telefonia Fija",
+        "idProducto": 45,
+        "Presentacion": "Inalambrico"
+    },
+    {
+        "Marca": "Philips",
+        "Stock": 8,
+        "Imagen": "https://picsum.photos/id/10/960/640",
+        "Nombre": "Telefono CD2401S",
+        "Precio": 239,
+        "Categoria": "Telefonia Fija",
+        "idProducto": 46,
+        "Presentacion": "Inalambrico"
+    },
+    {
+        "Marca": "Philips",
+        "Stock": 8,
+        "Imagen": "https://picsum.photos/id/1047/960/640",
+        "Nombre": "Telefono CD1302S",
+        "Precio": 249,
+        "Categoria": "Telefonia Fija",
+        "idProducto": 47,
+        "Presentacion": "Inalambrico"
+    },
+    {
+        "Marca": "Sanyo",
+        "Stock": 10,
+        "Imagen": "https://picsum.photos/id/1048/960/640",
+        "Nombre": "Telefono HNS-3300",
+        "Precio": 69,
+        "Categoria": "Telefonia Fija",
+        "idProducto": 48,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Gafa",
+        "Stock": 7,
+        "Imagen": "https://picsum.photos/id/1049/960/640",
+        "Nombre": "Lavarropa 7000",
+        "Precio": 1679,
+        "Categoria": "Lavarropas",
+        "idProducto": 49,
+        "Presentacion": "7kg"
+    },
+    {
+        "Marca": "Gafa",
+        "Stock": 4,
+        "Imagen": "https://picsum.photos/id/1050/960/640",
+        "Nombre": "Lavarropa 7500 T750",
+        "Precio": 1839,
+        "Categoria": "Lavarropas",
+        "idProducto": 50,
+        "Presentacion": "7,5kg"
+    },
+    {
+        "Marca": "Gafa",
+        "Stock": 12,
+        "Imagen": "https://picsum.photos/id/1051/960/640",
+        "Nombre": "Lavarropa ACQ7500 GRAFT750",
+        "Precio": 1939,
+        "Categoria": "Lavarropas",
+        "idProducto": 51,
+        "Presentacion": "7,5kg"
+    },
+    {
+        "Marca": "LG",
+        "Stock": 10,
+        "Imagen": "https://picsum.photos/id/1052/960/640",
+        "Nombre": "Lavarropa WF-T1202TP",
+        "Precio": 2449,
+        "Categoria": "Lavarropas",
+        "idProducto": 52,
+        "Presentacion": "12kg"
+    },
+    {
+        "Marca": "LG",
+        "Stock": 10,
+        "Imagen": "https://picsum.photos/id/1053/960/640",
+        "Nombre": "Lavarropa WF-T1205TP Titanium",
+        "Precio": 2499,
+        "Categoria": "Lavarropas",
+        "idProducto": 53,
+        "Presentacion": "12kg"
+    },
+    {
+        "Marca": "Kodak",
+        "Stock": 10,
+        "Imagen": "https://picsum.photos/id/1054/960/640",
+        "Nombre": "Camara Digital C813",
+        "Precio": 549,
+        "Categoria": "Camaras digitales",
+        "idProducto": 54,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Sanyo",
+        "Stock": 15,
+        "Imagen": "https://picsum.photos/id/1055/960/640",
+        "Nombre": "Camara Digital VPCS-870EX",
+        "Precio": 579,
+        "Categoria": "Camaras digitales",
+        "idProducto": 55,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Kodak",
+        "Stock": 15,
+        "Imagen": "https://picsum.photos/id/1056/960/640",
+        "Nombre": "Camara Digital C913",
+        "Precio": 599,
+        "Categoria": "Camaras digitales",
+        "idProducto": 56,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Samsung",
+        "Stock": 15,
+        "Imagen": "https://picsum.photos/id/1057/960/640",
+        "Nombre": "Camara Digital 760",
+        "Precio": 649,
+        "Categoria": "Camaras digitales",
+        "idProducto": 57,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Samsung",
+        "Stock": 20,
+        "Imagen": "https://picsum.photos/id/1058/960/640",
+        "Nombre": "Camara Digital ES10",
+        "Precio": 749,
+        "Categoria": "Camaras digitales",
+        "idProducto": 58,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Samsung",
+        "Stock": 40,
+        "Imagen": "https://picsum.photos/id/1059/960/640",
+        "Nombre": "Camara Digital ES15",
+        "Precio": 799,
+        "Categoria": "Camaras digitales",
+        "idProducto": 59,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Sony",
+        "Stock": 15,
+        "Imagen": "https://picsum.photos/id/1060/960/640",
+        "Nombre": "Camara Video DCR-DVD650",
+        "Precio": 2749,
+        "Categoria": "Video camaras",
+        "idProducto": 60,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Sony",
+        "Stock": 10,
+        "Imagen": "https://picsum.photos/id/1061/960/640",
+        "Nombre": "Camara Video DCR-DVD810",
+        "Precio": 2999,
+        "Categoria": "Video camaras",
+        "idProducto": 61,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Sigma",
+        "Stock": 12,
+        "Imagen": "https://picsum.photos/id/1062/960/640",
+        "Nombre": "Calefactor TB 2400 GN",
+        "Precio": 459,
+        "Categoria": "Estufas",
+        "idProducto": 62,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Sigma",
+        "Stock": 12,
+        "Imagen": "https://picsum.photos/id/1063/960/640",
+        "Nombre": "Calefactor TB 3000 GN",
+        "Precio": 699,
+        "Categoria": "Estufas",
+        "idProducto": 63,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Sigma",
+        "Stock": 15,
+        "Imagen": "https://picsum.photos/id/1064/960/640",
+        "Nombre": "Calefactor TB 5000 GN",
+        "Precio": 1999,
+        "Categoria": "Estufas",
+        "idProducto": 64,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "LG",
+        "Stock": 15,
+        "Imagen": "https://picsum.photos/id/1065/960/640",
+        "Nombre": "Aire Acondicionador SP TS-C096",
+        "Precio": 1999,
+        "Categoria": "Aire acondicionado",
+        "idProducto": 65,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "LG",
+        "Stock": 10,
+        "Imagen": "https://picsum.photos/id/1066/960/640",
+        "Nombre": "Aire Acondicionador SP TS-C096",
+        "Precio": 1999,
+        "Categoria": "Aire acondicionado",
+        "idProducto": 66,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "LG",
+        "Stock": 10,
+        "Imagen": "https://picsum.photos/id/1067/960/640",
+        "Nombre": "Aire Acondicionador SP TS-C126",
+        "Precio": 2249,
+        "Categoria": "Aire acondicionado",
+        "idProducto": 67,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "LG",
+        "Stock": 20,
+        "Imagen": "https://picsum.photos/id/1068/960/640",
+        "Nombre": "Aire Acondicionador SP TS-C186",
+        "Precio": 3049,
+        "Categoria": "Aire acondicionado",
+        "idProducto": 68,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "LG",
+        "Stock": 20,
+        "Imagen": "https://picsum.photos/id/1069/960/640",
+        "Nombre": "Aire Acondicionador SP LS-C186",
+        "Precio": 3349,
+        "Categoria": "Aire acondicionado",
+        "idProducto": 69,
+        "Presentacion": "Sin detalle"
+    },
+    {
+        "Marca": "Westinghouse",
+        "Stock": 15,
+        "Imagen": "https://picsum.photos/id/1070/960/640",
+        "Nombre": "Aire Acondicionador SP WSX09CG",
+        "Precio": 1599,
+        "Categoria": "Aire acondicionado",
+        "idProducto": 70,
+        "Presentacion": "Sin detalle"
+    }
+]

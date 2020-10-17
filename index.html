@@ -119,7 +119,7 @@
 
 		if (!window.localStorage.getItem("PRODUCTOS")) {
 			//Si no hay LStorage obtengo datos de una API
-			fetch("https://api.myjson.com/bins/dcg2p")
+			fetch("./productos.json")
 				.then(rta => rta.json())
 				.then(items => {
 					window.localStorage.setItem("PRODUCTOS", JSON.stringify(items))
